@@ -1,0 +1,95 @@
+h3 {
+    margin-top: 160px;
+    color: #cf1c2c;
+    text-align: center;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: -25px;
+  }
+  
+  #nav li a {
+    color: black;
+  }
+  
+  #nav li a:hover {
+    color: #cf1c2c;
+  }
+  
+  #nav li:hover {
+    border-bottom: 4px solid #cf1c2c;
+  }
+  
+  nav {
+    position: fixed;
+    width: 100%;
+    height: 125px;
+    background-color: white;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  #tim{
+    margin: 0 15% 0 15%;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  #tim li{
+    margin-bottom: 30px;
+  }
+
+  .naziv{
+    font-family: "Sassy Frass", cursive;
+    font-size: 60px;
+    font-weight: 800;
+    color: #cf1c2c;
+    margin-bottom: 15px;
+  }
+
+  .opis{
+    color: gray;
+    margin-top: 7px;
+  }
+
+  #najjaci{
+    max-width: 350px;
+    border-radius: 100px;
+    align-self: center;
+  }
+
+  .desni{
+    text-align: right;
+    margin-left: 100px;
+  }
+
+  .levi{
+    text-align: left;
+    margin-right: 100px;
+  }
+
+  @media only screen and (max-width: 650px) {
+    nav {
+      height: 200px;
+      position: static;
+    }
+    #nav {
+      position: static;
+      margin-top: 20px;
+    }
+    h3 {
+      margin-top: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    h1 {
+        margin-top: 15px;
+      font-size: 60px;
+      margin-bottom: -150px;
+    }
+    #najjaci{
+        visibility: hidden;
+    }
+  }

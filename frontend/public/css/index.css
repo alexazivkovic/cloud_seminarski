@@ -1,0 +1,63 @@
+#vid,
+#background {
+  position: fixed;
+  right: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#background {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+h1,
+h3 {
+  color: white;
+}
+
+#content {
+  position: fixed;
+  width: 100%;
+  bottom: 5%;
+  text-align: center;
+}
+
+button {
+  margin-top: 28px;
+  background-color: #cf1c2c;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: white;
+  color: #cf1c2c;
+}
+
+#nav li a {
+  color: white;
+}
+
+#nav li:hover {
+  border-bottom: 4px solid white;
+}
+
+@media only screen and (max-width: 650px) {
+  #vid {
+    visibility: hidden;
+  }
+  #background {
+    background: rgb(0, 0, 0);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 80px;
+  }
+}

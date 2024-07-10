@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamma Mia - Kontakt</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/kontakt.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="img/logo3.png" alt="logo" id="logo"></a>
+        <ul id="nav">
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="oNama.html">O nama</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="katalog.html">Katalog</a></li>
+            <li><a href="kontakt.html" class="active">Kontakt</a></li>
+        </ul>
+    </nav>
+    <h3>Pozovite nas na 0653120807 ili</h3>
+    <h1>Popunite web formu</h1>
+    <form>
+        <label class="containerCheck">Margherita
+            <input type="checkbox" value="Margherita" name="pizza1" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Vesuvio
+            <input type="checkbox" value="Vesuvio" name="pizza2" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Fungi
+            <input type="checkbox" value="Fungi" name="pizza3" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Vegetariana
+            <input type="checkbox" value="Vegetariana" name="pizza4" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Capricciosa
+            <input type="checkbox" value="Capricciosa" name="pizza5" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Sweet Mamma
+            <input type="checkbox" value="Sweet Mamma" name="pizza6" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Pizza Tuna
+            <input type="checkbox" value="Pizza Tuna" name="pizza7" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Diavolo
+            <input type="checkbox" value="Diavolo" name="pizza8" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Bresaola
+            <input type="checkbox" value="Bresaola" name="pizza9" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Fat Mamma
+            <input type="checkbox" value="Fat Mamma" name="pizza10" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Pizza BBQ
+            <input type="checkbox" value="Pizza BBQ" name="pizza11" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Pizza Bianca
+            <input type="checkbox" value="Pizza Bianca" name="pizza12" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Chicken Pizza
+            <input type="checkbox" value="Chicken Pizza" name="pizza13" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Quattro Stagioni
+            <input type="checkbox" value="Quattro Stagioni" name="pizza14" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+        <label class="containerCheck">Quatro Formaggio
+            <input type="checkbox" value="pizza15" name="pizza15" class="pizza">
+            <span class="checkmarkCheck"></span>
+        </label>
+
+         <label class="containerRadio">24 cm
+            <input type="radio" checked="checked" name="radio" value="24cm" required>
+            <span class="checkmarkRadio"></span>
+          </label>
+          <label class="containerRadio">32 cm
+            <input type="radio" name="radio" value="32cm">
+            <span class="checkmarkRadio"></span>
+          </label>
+          <label class="containerRadio">42 cm
+            <input type="radio" name="radio" value="42cm">
+            <span class="checkmarkRadio"></span>
+          </label>
+          
+        <input class="podaci" type="text" name="ime" id="ime" placeholder="Ime i prezime" required>
+        <input class="podaci" type="text" name="adresa" id="adresa" placeholder="Adresa i broj" required>
+        <input class="podaci" type="tel" name="tel" id="tel" placeholder="Broj telefona" required>
+
+        <button type="submit">Poruči</button><input id="reset" type="reset" value="Poništi">
+    </form>
+
+    <script src="js/form.js" type="module"></script>
+</body>
+</html>
