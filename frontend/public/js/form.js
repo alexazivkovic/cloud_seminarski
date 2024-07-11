@@ -37,6 +37,6 @@ function porucivanje() {
         alert("Došlo je do greške prilikom slanja porudžbine.");
       });
   } catch {
-    console.log("axios nije izvrsen");
+    console.log("post nije izvrsen");
   }
 }

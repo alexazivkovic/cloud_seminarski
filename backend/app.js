@@ -11,9 +11,9 @@ app.use(bodyParser.json());
 
 // MySQL connection setup
 const connection = mysql.createConnection({
-  host: "mysql-server", //ovde staviti naziv mysql servera u mrezi
-  user: "novi",
-  password: "novi",
+  host: "mysql-server",
+  user: "root",
+  password: "mypassword",
   database: "swfavorites",
 });
 
@@ -34,21 +34,20 @@ connection.connect((err) => {
 
   connection.query(createTableSql, (err, result) => {
     if (err) throw err;
-    console.log("Table 'favorites' is ready.");
+    console.log("Table 'orders' is ready.");
   });
 });
 
-// Endpoint to get all favorites
+// Endpoint to get
 app.get("/orders", (req, res) => {
-  connection.query("SELECT * FROM favorites", (error, results) => {
+  connection.query("SELECT * FROM orders", (error, results) => {
     if (error) throw error;
     res.json(results);
   });
 });
 
-// Endpoint to add a favorite
+// Endpoint to add
 app.post("/orders", (req, res) => {
-  console.log("zahtev prihvacen");
   const { name, adr, tel, pizza, size } = req.body;
   console.log(name + " " + adr + " " + tel + " " + pizza + " " + size);
   if (!(name && adr && tel && pizza && size)) {
@@ -61,37 +60,6 @@ app.post("/orders", (req, res) => {
     res.status(201).send(`Favorite added with ID: ${results.insertId}`);
     console.log("zahtev upisan");
   });
-});
-
-// Endpoint to delete a favorite
-app.delete("/orders/:id", (req, res) => {
-  const { id } = req.params;
-  const query = "DELETE FROM favorites WHERE id = ?";
-  connection.query(query, [id], (error, results) => {
-    if (error) throw error;
-    res.send(`Favorite with ID ${id} deleted.`);
-  });
-});
-
-// Endpoint to update a favorite
-app.put("/orders/:id", (req, res) => {
-  const { id } = req.params;
-  const { name, type, url } = req.body;
-  const query = "UPDATE favorites SET name = ?, type = ?, url = ? WHERE id = ?";
-  connection.query(query, [name, type, url, id], (error, results) => {
-    if (error) throw error;
-    res.send(`Favorite with ID ${id} updated.`);
-  });
-});
-
-// Endpoint to fetch episodes from an external API
-app.get("/episodes", async (req, res) => {
-  try {
-    const response = await axios.get("https://rickandmortyapi.com/api/episode");
-    res.status(200).json({ episodes: response.data });
-  } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
-  }
 });
 
 app.listen(port, () => {

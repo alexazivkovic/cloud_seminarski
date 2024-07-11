@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="uname" id="uname" placeholder="Username" class="podaci" required>
+        <input type="password" name="psswd" id="psswd" placeholder="Password" class="podaci" required>
+        <button type="button" id="logindugme">Login</button>
+    </form>
+
+    <table style="visibility: hidden;" id="pod">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ime</th>
+                <th>Adresa</th>
+                <th>Telefon</th>
+                <th>Pizza</th>
+                <th>Velicina</th>
+            </tr>
+        </thead>
+        <tbody id="orders-table-body">
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <a href="index.html">nazad na pocetnu</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="./js/login.js"></script>
+</body>
+</html>
