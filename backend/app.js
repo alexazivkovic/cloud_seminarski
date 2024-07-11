@@ -48,12 +48,18 @@ app.get("/orders", (req, res) => {
 
 // Endpoint to add a favorite
 app.post("/orders", (req, res) => {
+  console.log("zahtev prihvacen");
   const { name, adr, tel, pizza, size } = req.body;
+  console.log(name + " " + adr + " " + tel + " " + pizza + " " + size);
+  if (!(name && adr && tel && pizza && size)) {
+    throw Error;
+  }
   const query =
     "INSERT INTO orders (name, adr, tel, pizza, size) VALUES (?, ?, ?, ?, ?)";
   connection.query(query, [name, adr, tel, pizza, size], (error, results) => {
     if (error) throw error;
     res.status(201).send(`Favorite added with ID: ${results.insertId}`);
+    console.log("zahtev upisan");
   });
 });
 
