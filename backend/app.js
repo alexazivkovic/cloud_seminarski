@@ -49,7 +49,6 @@ app.get("/orders", (req, res) => {
 // Endpoint to add
 app.post("/orders", (req, res) => {
   const { name, adr, tel, pizza, size } = req.body;
-  console.log(name + " " + adr + " " + tel + " " + pizza + " " + size);
   if (!(name && adr && tel && pizza && size)) {
     throw Error;
   }

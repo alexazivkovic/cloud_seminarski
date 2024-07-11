@@ -1,9 +1,11 @@
-name: 'fav-app' 
+name: 'orders-app' 
+version: '1.0'
  
 services: 
   mysql: 
     image: mysql:latest 
     container_name: mysql-server 
+    restart: always
     env_file: 
       - ./env/mysql.env 
     networks: 
@@ -20,7 +22,8 @@ services:
  
   backend: 
     build: ./backend 
-    container_name: fav-backend 
+    container_name: backend 
+    restart: always
     ports: 
       - 3000:3000 
     env_file: 
@@ -31,12 +34,13 @@ services:
       - ./backend:/app 
       - /app/node_modules 
     depends_on: 
-      mysql: #naziv servisa ne naziv kontejnera mysql-server 
+      mysql: 
         condition: service_healthy  
        
   frontend: 
     build: ./frontend 
-    container_name: fav-frontend 
+    container_name: frontend 
+    restart: always
     ports: 
       - "3001:3000" 
     networks: 

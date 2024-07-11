@@ -17,23 +17,17 @@ function porucivanje() {
     size: size,
     pizza: pizza,
   };
-  console.log("event happened");
-  console.log(formData);
 
   try {
-    // Make a POST request using Axios
     axios
       .post("http://localhost:3000/orders", formData)
       .then((response) => {
-        // Handle success, if needed
         console.log("Order placed successfully:", response.data);
-        // Optionally, you can reset the form or show a success message to the user
+        document.getElementById("reset").click();
         alert("Porudžbina je uspešno poslata na obradu.");
       })
       .catch((error) => {
-        // Handle error
         console.error("Error placing order:", error);
-        // Optionally, show an error message to the user
         alert("Došlo je do greške prilikom slanja porudžbine.");
       });
   } catch {
